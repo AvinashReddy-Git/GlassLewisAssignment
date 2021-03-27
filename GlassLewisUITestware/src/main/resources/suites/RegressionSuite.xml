@@ -4,9 +4,7 @@
     <listeners>
         <listener
                 class-name="com.glasslewis.ui.retryfailedtestcases.RetryListenerClass"/>
-        <listener
-                class-name="com.glasslewis.ui.reportlistener.ExtentReportListener"/>
-    </listeners>
+         </listeners>
 
     <test name="FireFox">
         <parameter name="BrowserType" value="FIREFOX"/>
