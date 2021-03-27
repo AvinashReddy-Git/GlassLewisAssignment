@@ -1,6 +1,8 @@
 package com.glasslewis.ui.pages;
 
-import org.openqa.selenium.By;
+import java.util.List;
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,15 +24,8 @@ public class WDLandingPage extends TestBase {
     @FindBy(xpath = "//a[contains(text(),'Activision Blizzard Inc')]")
     private WebElement companyActivisionBlizzardIncLink;
 
-   @FindBy(xpath="//div[@id='grid']")
-   private WebElement tableGrid;
-
-
- /*   By belgiumCheckBox = By.xpath("//div[@id='filter-country']//label[@id='Belgium-cb-label-CountryFilter']");
-
-    By countryUpdateButton=By.xpath("//body/div[@id='wd-site-page']/div[2]/aside[1]/div[4]/div[1]/div[2]/div[2]/button[1]");*/
-
-    //  By  companyActivisionBlizzardIncLink =By.xpath("//a[contains(text(),'Activision Blizzard Inc')]");
+    @FindBy(xpath = "//div[@id='grid']")
+    private WebElement tableGrid;
 
     public WDLandingPage(WebDriver driver) {
         super(driver);
@@ -43,10 +38,16 @@ public class WDLandingPage extends TestBase {
 
     }
 
- public void getGridContent() throws InterruptedException {
-     TableUtil.getGridTableContent(tableGrid);
- }
-    public void getGridHeader() throws InterruptedException {
-        TableUtil.getGridTableContent(tableGrid);
+    public List<Map<String, String>> getGridContent() {
+       return TableUtil.getGridTableContent(tableGrid);
     }
+
+    public VoteCardPage navigateToVoteCardPage() {
+
+        this.usaCheckBox.click();
+        this.countryUpdateButton.click();
+        this.companyActivisionBlizzardIncLink.click();
+        return new VoteCardPage(getDriver());
+    }
+
 }

@@ -5,7 +5,9 @@ import static com.glasslewis.ui.constants.Constants.IMPLICIT_WAIT;
 import static com.glasslewis.ui.constants.Constants.PAGE_LOAD_TIMEOUT;
 import static com.glasslewis.ui.constants.Constants.SERVER_URL;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -47,17 +49,19 @@ public class SampleClass {
         driver.findElement(By.xpath("//body/div[@id='wd-site-page']/div[2]/aside[1]/div[4]/div[1]/div[2]/div[2]/button[1]")).click();
         Thread.sleep(5000);*/
 
-        //        driver.findElement(By.xpath("//div[@id='filter-country']//label[@id='UnitedStates-cb-label-CountryFilter']")).click();
-        //        Thread.sleep(2000);
-        //        driver.findElement(By.xpath("//body/div[@id='wd-site-page']/div[2]/aside[1]/div[4]/div[1]/div[2]/div[2]/button[1]")).click();
-        //        Thread.sleep(2000);
-        //        driver.findElement(By.xpath("//a[contains(text(),'Activision Blizzard Inc')]")).click();
-        //        System.out.println("*****"+driver.findElement(By.xpath("//div[@id=\"dv-meetings-available\"]//div//h2")).getAttribute
-        //        ("innerHTML").trim());
-        //        String s =driver.findElement(By.tagName("h2")).getText();
-        //        System.out.println("*****"+s);
-        //        Thread.sleep(2000);
-        //
+                driver.findElement(By.xpath("//div[@id='filter-country']//label[@id='UnitedStates-cb-label-CountryFilter']")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("//body/div[@id='wd-site-page']/div[2]/aside[1]/div[4]/div[1]/div[2]/div[2]/button[1]")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("//a[contains(text(),'Activision Blizzard Inc')]")).click();
+                System.out.println("*****"+driver.findElement(By.xpath("//div[@id=\"dv-meetings-available\"]//div//h2")).getAttribute
+                ("innerHTML").trim());
+        Thread.sleep(2000);
+                WebElement s =driver.findElement(By.xpath("//*[@id=\"detail-issuer-name\"]"));
+        Thread.sleep(2000);
+                System.out.println("*****"+s.getText());
+                Thread.sleep(2000);
+
      /*   Thread.sleep(3000);
         WebElement element=driver.findElement(By.xpath("//a[@title=\"Go to the next page\"]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element);
@@ -66,7 +70,7 @@ public class SampleClass {
         Thread.sleep(10000);
         System.out.println();*/
 
-        driver.findElement(By.xpath("//div[@id='filter-country']//label[@id='Belgium-cb-label-CountryFilter']")).click();
+       /* driver.findElement(By.xpath("//div[@id='filter-country']//label[@id='Belgium-cb-label-CountryFilter']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//body/div[@id='wd-site-page']/div[2]/aside[1]/div[4]/div[1]/div[2]/div[2]/button[1]")).click();
 
@@ -76,8 +80,13 @@ public class SampleClass {
         WebElement mytable = driver.findElement(By.xpath("//div[@id='grid']"));
 
 
-        System.out.println(TableUtil.getGridTableContent(mytable));
-
+        System.out.println();
+        List<Map<String,String>> content=TableUtil.getGridTableContent(mytable);
+        System.out.println(content.size());
+        for(Map<String,String> row: content) {
+            System.out.println(row);
+            System.out.println(row.get("Country"));
+        }*/
         driver.quit();
 
     }
