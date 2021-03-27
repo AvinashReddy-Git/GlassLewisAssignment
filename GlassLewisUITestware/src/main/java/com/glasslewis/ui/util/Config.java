@@ -17,6 +17,7 @@ public class Config {
     static Properties properties = new Properties();
 
     static {
+        TestUtil.setDateForLog4j();
         FileInputStream ip = null;
         try {
             ip = new FileInputStream(Constants.CONFIG_FILE);
@@ -40,8 +41,6 @@ public class Config {
         return Boolean.parseBoolean(getProperty(key));
     }
 
-    public static String getUrl(final String endUrl) {
-        return String.format(Constants.SERVER_URL, getProperty("hostname"), endUrl);
-    }
+
 
 }

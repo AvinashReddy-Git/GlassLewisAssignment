@@ -1,6 +1,7 @@
 package com.glasslewis.ui.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -28,5 +29,22 @@ public class WDLandingPage extends TestBase {
     By countryUpdateButton=By.xpath("//body/div[@id='wd-site-page']/div[2]/aside[1]/div[4]/div[1]/div[2]/div[2]/button[1]");*/
 
     //  By  companyActivisionBlizzardIncLink =By.xpath("//a[contains(text(),'Activision Blizzard Inc')]");
+
+    public WDLandingPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void applyCountryFilter() {
+
+        this.belgiumCheckBox.click();
+        this.countryUpdateButton.click();
+
+    }
+
+    Boolean verifyGridContent()
+    {
+
+        return true;
+    }
 
 }
