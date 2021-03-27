@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Glass Lewis UI" preserve-order="true" parallel="false" verbose="1">
     <listeners>
-        <listener
-                class-name="com.glasslewis.ui.retryfailedtestcases.RetryListenerClass"/>
-         </listeners>
+        <listener class-name="com.glasslewis.ui.listener.TestListener"/>
+        <listener class-name="com.glasslewis.ui.retryfailedtestcases.RetryListenerClass"/>
+    </listeners>
 
     <test name="Chrome">
         <parameter name="BrowserType" value="CHROME"/>

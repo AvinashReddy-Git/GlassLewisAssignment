@@ -2,9 +2,6 @@ package com.glasslewis.ui.testcases;
 
 import static com.glasslewis.ui.constants.Constants.SERVER_URL;
 
-import java.util.List;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -32,13 +29,10 @@ public class VoteCardPageTest extends TestBase {
     }
 
     @Test(description = "Verify country filter functionality")
-    public void countryFilterTest()  {
+    public void countryFilterTest() {
 
         landingPage.navigateToVoteCardPage();
-
-
-        System.out.println( "**********"+voteCardPage.getText().trim());
-        Assert.assertEquals(voteCardPage.getText().trim(),"Activision Blizzard Inc","Banner not matching");
+        Assert.assertEquals(voteCardPage.getText().trim(), "Activision Blizzard Inc", "Banner not matching");
 
     }
 

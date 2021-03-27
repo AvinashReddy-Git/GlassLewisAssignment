@@ -11,8 +11,6 @@ public class VoteCardPage extends TestBase {
     @FindBy(id = "detail-issuer-name")
     private WebElement companyBanner;
 
-    // By companyBanner=By.id("detail-issuer-name");
-
     public VoteCardPage(WebDriver driver) {
         super(driver);
     }
