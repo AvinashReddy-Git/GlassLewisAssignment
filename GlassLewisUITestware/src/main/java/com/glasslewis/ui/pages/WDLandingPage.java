@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.glasslewis.ui.base.TestBase;
+import com.glasslewis.ui.util.TableUtil;
 
 public class WDLandingPage extends TestBase {
 
@@ -21,7 +22,8 @@ public class WDLandingPage extends TestBase {
     @FindBy(xpath = "//a[contains(text(),'Activision Blizzard Inc')]")
     private WebElement companyActivisionBlizzardIncLink;
 
-    By countryList;
+   @FindBy(xpath="//div[@id='grid']")
+   private WebElement tableGrid;
 
 
  /*   By belgiumCheckBox = By.xpath("//div[@id='filter-country']//label[@id='Belgium-cb-label-CountryFilter']");
@@ -41,10 +43,10 @@ public class WDLandingPage extends TestBase {
 
     }
 
-    Boolean verifyGridContent()
-    {
-
-        return true;
+ public void getGridContent() throws InterruptedException {
+     TableUtil.getGridTableContent(tableGrid);
+ }
+    public void getGridHeader() throws InterruptedException {
+        TableUtil.getGridTableContent(tableGrid);
     }
-
 }

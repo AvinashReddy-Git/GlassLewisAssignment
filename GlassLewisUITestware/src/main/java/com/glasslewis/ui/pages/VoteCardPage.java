@@ -1,6 +1,7 @@
 package com.glasslewis.ui.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,5 +13,9 @@ public class VoteCardPage extends TestBase {
     WebElement companyBanner;
 
    // By companyBanner=By.id("detail-issuer-name");
+
+    public VoteCardPage(WebDriver driver) {
+        super(driver);
+    }
 
 }

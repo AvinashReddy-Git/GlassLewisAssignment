@@ -27,12 +27,11 @@ public class WDLandingPageTest extends TestBase {
 
     @Test
     public void test1(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         landingPage.applyCountryFilter();
+
+
+
 
     }
 
