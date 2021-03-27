@@ -1,0 +1,33 @@
+# Compiled source #
+*.class
+*/bin/*
+
+# Eclipse files
+.project
+.classpath
+.settings/
+.metadata
+
+# IntelliJ IDEA files
+.idea
+*.iws
+*.ipr
+*.iml
+
+# Test output files
+test-output
+FailedTestsScreenshots
+*.html
+
+# Maven build files
+target
+reports
+
+#logs
+*.log
+*.txt
+
+#allure-results
+allure-results
+
+
