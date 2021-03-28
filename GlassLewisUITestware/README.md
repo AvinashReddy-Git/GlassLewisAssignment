@@ -1,5 +1,5 @@
 *************************************************************************************************
-The artifact has room for optimisation , but this is the best i can come up with in a short period of 3 days , open for suggestions
+The artifact has room for optimisation , but this is the best i can come up with in a short time frame , open for suggestions
 
 **************************************************************************************************
 
