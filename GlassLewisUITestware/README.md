@@ -1,3 +1,8 @@
+*************************************************************************************************
+The artifact has room for optimisation , but this is the best i can come up with in a short period of 3 days , open for suggestions
+
+**************************************************************************************************
+
 Introduction :
 This is a java selenium maven project.
 This framework is built using page object model design pattern,
