@@ -26,18 +26,18 @@ public class WDLandingPageTest extends TestBase {
         logger.debug("In setUp method");
         initialization(SERVER_URL, browserType);
         landingPage = new WDLandingPage(getDriver());
-
     }
 
     @Test(description = "Verify country filter functionality")
     public void countryFilterTest() {
-
         landingPage.applyCountryFilter();
-        List<Map<String, String>> content = landingPage.getGridContent();
-        for (Map<String, String> row : content) {
+        final List<Map<String, String>> content = landingPage.getGridContent();
+        logger.debug(content.toString());
+        for (final Map<String, String> row : content) {
             String countryName = row.get("Country").trim();
-            Assert.assertEquals("Belgium", countryName, "Other country is present");
+            Assert.assertEquals(countryName, "Belgium", "Other than Belgium is present");
         }
+        Assert.assertTrue(content.size() > 0);
     }
 
     @AfterMethod

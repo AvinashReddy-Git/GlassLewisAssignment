@@ -33,7 +33,9 @@ public enum Browser {
             chromeOptions.setExperimentalOption("useAutomationExtension", false);
             chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 
-            if (Config.getBooleanProperty("headless")) {
+
+
+            if(Boolean.valueOf(System.getProperty("headless","false"))){
                 logger.debug("Setting to headless true");
                 chromeOptions.addArguments("--headless");
             }
@@ -60,7 +62,9 @@ public enum Browser {
             profile.setPreference("pdfjs.disabled", true);
             firefoxOptions.setProfile(profile);
 
-            if (Config.getBooleanProperty("headless")) {
+
+
+            if(Boolean.valueOf(System.getProperty("headless","false"))){
                 logger.debug("Setting to headless true");
                 firefoxOptions.setHeadless(true);
             }

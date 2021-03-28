@@ -1,8 +1,20 @@
+Introduction :
+This is a java selenium maven project.
+This framework is built using page object model design pattern,
+ Cross-Browser Automation Testing ( Chrome and Firefox) , runs on windows OS,with logging and screen shot on test failure , WebEvenListner ,screen shot on failure functionality.
+It supports both head and headless mode .
+Testing configuration settings are passed as environment variables.
+Tests can be configured to run on various browser
+ 
+Dependencies used:
+selenium
+testng
+slf4j
+
 Developed and Tested on :
 FireFox : 78.9.0esr (64-bit)
 Chrome : Version 89.0.4389.90 (Official Build) (64-bit)
 Operating System : Windows 10
-
 
 How to run:
 

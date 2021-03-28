@@ -3,6 +3,7 @@ package com.glasslewis.ui.pages;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,9 +40,11 @@ public class WDLandingPage extends TestBase {
 
         jse.executeScript(CLICK, this.belgiumCheckBox);
         jse.executeScript(CLICK, this.countryUpdateButton);
+
     }
 
     public List<Map<String, String>> getGridContent() {
+        waitForVisibilityOfElement(getDriver().findElement(By.xpath("//td[contains(text(),'Belgium')]")));
         return TableUtil.getGridTableContent(tableGrid);
     }
 
