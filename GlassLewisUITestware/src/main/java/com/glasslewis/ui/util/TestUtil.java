@@ -1,19 +1,19 @@
 package com.glasslewis.ui.util;
 
+import static com.glasslewis.ui.constants.Constants.EXPLICT_WAIT;
+
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,24 +41,5 @@ public class TestUtil {
         return sdf.format(calender.getTime());
     }
 
-    public static void setDateForLog4j() {
-        System.setProperty("current_date", getTime());
-        PropertyConfigurator.configure("./src/main/resources/log4j.properties");
-    }
-
-    public static String encodeFileToBase64Binary(File file) {
-        String encodedfile = null;
-        try (FileInputStream fileInputStreamReader = new FileInputStream(file)) {
-            byte[] bytes = new byte[(int) file.length()];
-            if (fileInputStreamReader.read(bytes) > 0) {
-                encodedfile = new String(Base64.encodeBase64(bytes), StandardCharsets.UTF_8);
-            }
-        } catch (FileNotFoundException e) {
-            logger.error("{} File not found", file);
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return encodedfile;
-    }
 
 }

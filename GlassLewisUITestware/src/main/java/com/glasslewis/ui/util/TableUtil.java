@@ -13,11 +13,8 @@ public class TableUtil {
     public static List<Map<String, String>> getGridTableContent(final WebElement gridTable) {
 
         List<String> headers = getGridTableHeader(gridTable);
-
         List<WebElement> rows_table = gridTable.findElements(By.tagName("tr"));
-
         int rows_count = rows_table.size();
-
         List<Map<String, String>> content = new ArrayList<>();
         for (int row = 0; row < rows_count; row++) {
             Map<String, String> rowContent = new HashMap<>();

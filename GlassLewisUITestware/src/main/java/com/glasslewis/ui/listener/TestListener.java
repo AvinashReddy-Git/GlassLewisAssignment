@@ -14,10 +14,9 @@ import com.glasslewis.ui.util.TestUtil;
 
 public class TestListener implements ITestListener {
     private static final Logger logger = LoggerFactory.getLogger(TestListener.class);
-    WebDriver driver = null;
 
     @Override
-    public void onTestFailure(ITestResult result) {
+    public void onTestFailure(final ITestResult result) {
         try {
             Object currentClass = result.getInstance();
             WebDriver driver = ((TestBase) currentClass).getDriver();
@@ -27,21 +26,21 @@ public class TestListener implements ITestListener {
         }
     }
 
-    public void onFinish(ITestContext context) {
+    public void onFinish(final ITestContext context) {
     }
 
-    public void onTestStart(ITestResult result) {
+    public void onTestStart(final ITestResult result) {
     }
 
-    public void onTestSuccess(ITestResult result) {
+    public void onTestSuccess(final ITestResult result) {
     }
 
-    public void onTestSkipped(ITestResult result) {
+    public void onTestSkipped(final ITestResult result) {
     }
 
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+    public void onTestFailedButWithinSuccessPercentage(final ITestResult result) {
     }
 
-    public void onStart(ITestContext context) {
+    public void onStart(final ITestContext context) {
     }
 }
