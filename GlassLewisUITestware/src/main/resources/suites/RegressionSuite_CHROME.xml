@@ -9,8 +9,8 @@
     <test name="Chrome">
         <parameter name="BrowserType" value="CHROME"/>
         <classes>
-            <class name="com.glasslewis.ui.testcases.WDLandingPageTest"></class>
-            <class name="com.glasslewis.ui.testcases.VoteCardPageTest"></class>
+            <class name="com.glasslewis.ui.testcases.WDLandingBasePageTest"></class>
+            <class name="com.glasslewis.ui.testcases.VoteCardBasePageTest"></class>
         </classes>
     </test>
 </suite>

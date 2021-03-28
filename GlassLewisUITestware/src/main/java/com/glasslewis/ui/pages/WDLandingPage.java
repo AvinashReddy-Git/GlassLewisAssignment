@@ -4,15 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.glasslewis.ui.base.TestBase;
+import com.glasslewis.ui.base.BasePage;
 import com.glasslewis.ui.util.TableUtil;
 
-public class WDLandingPage extends TestBase {
+public class WDLandingPage extends BasePage {
 
     @FindBy(xpath = "//div[@id='filter-country']//label[@id='Belgium-cb-label-CountryFilter']")
     private WebElement belgiumCheckBox;
@@ -29,11 +28,11 @@ public class WDLandingPage extends TestBase {
     @FindBy(xpath = "//div[@id='grid']")
     private WebElement tableGrid;
 
-    JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-    private static String CLICK="arguments[0].click()";
+    private static String CLICK = "arguments[0].click()";
 
-    public WDLandingPage(WebDriver driver) {
+    public WDLandingPage(final WebDriver driver) {
         super(driver);
+
     }
 
     public void applyCountryFilter() {
@@ -44,7 +43,7 @@ public class WDLandingPage extends TestBase {
     }
 
     public List<Map<String, String>> getGridContent() {
-        waitForVisibilityOfElement(getDriver().findElement(By.xpath("//td[contains(text(),'Belgium')]")));
+        waitForVisibilityOfElement(driver.findElement(By.xpath("//td[contains(text(),'Belgium')]")));
         return TableUtil.getGridTableContent(tableGrid);
     }
 
@@ -54,7 +53,7 @@ public class WDLandingPage extends TestBase {
         jse.executeScript(CLICK, this.countryUpdateButton);
 
         this.companyActivisionBlizzardIncLink.click();
-        return new VoteCardPage(getDriver());
+        return new VoteCardPage(driver);
     }
 
 }
