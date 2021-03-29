@@ -8,7 +8,7 @@ This is a java selenium maven project.
 This framework is built using page object model design pattern,
  Cross-Browser Automation Testing ( Chrome ,Firefox,Edge) , runs on windows OS,with logging and screen shot on test failure , WebEvenListner ,screen shot on failure functionality.
 It supports both head and headless mode .
-Testing configuration settings are passed as environment variables.
+Testing configuration settings can be passed as environment variables.
 Tests can be configured to run on various browser
  
 **Dependencies used:**
