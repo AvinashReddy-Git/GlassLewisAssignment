@@ -15,6 +15,8 @@ Tests can be configured to run on various browser
 selenium
 testng
 slf4j
+apache commons
+commons io
 
 **Developed and Tested on :**
 FireFox : 78.9.0esr (64-bit)
